@@ -15,9 +15,9 @@ namespace PokemonApp.Controllers
             _httpClient = new HttpClient();
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string name = "treecko")
         {
-            var pokemon = await GetPokemon("treecko");
+            var pokemon = await GetPokemon(name);
             return View(pokemon);
         }
 
